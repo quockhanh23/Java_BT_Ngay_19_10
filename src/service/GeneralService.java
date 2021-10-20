@@ -1,10 +1,14 @@
 package service;
 
+import model.Product;
+
 public interface GeneralService<T> {
 
     int findIndexById(int id);
 
-    void add(T t);
+    void findIndexByName( String name);
+
+    void addProduct(T t);
 
     void update(T t, int id);
 
@@ -17,5 +21,8 @@ public interface GeneralService<T> {
     void sortByPriceDown();
 
     void sortByName();
+
+    Product create();
+    void disPlay();
 
 }

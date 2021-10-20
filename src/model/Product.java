@@ -5,7 +5,7 @@ public class Product {
     private String name;
     private int price;
     private String made;
-    private static String addres = "Nhà số 3";
+    private static String addres = "Nhà số 3, Ngách 987/76";
 
     public Product(int id, String name, int price, String made) {
         this.id = id;
@@ -51,11 +51,11 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", made='" + made + '\'' + ", Địa chỉ mua sản phẩm: " + addres +
+        return "Sản phẩm của công ty{" +
+                "Mã số=" + id +
+                ", Tên sản phẩm='" + name + '\'' +
+                ", Giá=" + price + "VND " +
+                ", Sản xuất tại='" + made + '\'' + ", Địa chỉ mua sản phẩm: " + addres +
                 '}';
     }
 }

@@ -1,14 +1,14 @@
 package service;
 
 import model.Product;
-import service.GeneralService;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class ProductService implements GeneralService<Product> {
-    private ArrayList<Product> listProduct;
+        private ArrayList<Product> listProduct;
 
     public ProductService(ArrayList<Product> listProduct) {
         this.listProduct = listProduct;
@@ -17,7 +17,6 @@ public class ProductService implements GeneralService<Product> {
     public ProductService() {
         listProduct = new ArrayList<>();
     }
-
 
 
     @Override
@@ -31,9 +30,23 @@ public class ProductService implements GeneralService<Product> {
         return -1;
     }
 
+    @Override
+    public void findIndexByName(String name) {
+
+        for (int i = 0; i < listProduct.size(); i++) {
+            if (listProduct.get(i).getName().equals(name)) {
+                System.out.println(listProduct.get(i));
+
+            }
+
+        }
+        System.out.println("Không có sản phẩm này");
+
+    }
+
 
     @Override
-    public void add(Product product) {
+    public void addProduct(Product product) {
         listProduct.add(product);
 
     }
@@ -68,7 +81,7 @@ public class ProductService implements GeneralService<Product> {
 
     @Override
     public void sortByPriceDown() {
-        listProduct.sort((p1,p2) -> p2.getPrice() - p1.getPrice());
+        listProduct.sort((p1, p2) -> p2.getPrice() - p1.getPrice());
     }
 
     @Override
@@ -76,5 +89,27 @@ public class ProductService implements GeneralService<Product> {
         listProduct.sort(Comparator.comparing(Product::getName));
     }
 
+    @Override
+    public Product create() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập tên: ");
+        String name = scanner.nextLine();
+        System.out.print("Nhập nơi sản suất: ");
+        String made = scanner.nextLine();
+        System.out.print("Nhập id: ");
+        int id = scanner.nextInt();
+        System.out.print("Nhập giá tiền: ");
+        int price = scanner.nextInt();
+        return new Product(id, name, price, made);
+    }
+
+    @Override
+    public void disPlay() {
+    }
 
 }
+
+
+
+
