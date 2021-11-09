@@ -11,7 +11,6 @@ public class Main {
         productService.addProduct(new Product(3, "Tăm", 3000, "Mexico"));
         productService.addProduct(new Product(4, "Dây điện", 13000, "America"));
 
-
         int choice = -1;
         while (choice != 0) {
             Scanner scanner = new Scanner(System.in);
@@ -63,16 +62,7 @@ public class Main {
                 default:
                     System.out.println("/************************************/");
                     System.out.println(choice + " không có trong mục lục mời nhập lại");
-                    System.out.println("=====================================");
-                    System.out.println("=====================================");
-                    System.out.println("===============      ================");
-                    System.out.println("===============      ================");
-                    System.out.println("===============      ================");
-                    System.out.println("===============      ================");
-                    System.out.println("============            =============");
-                    System.out.println("=============          ==============");
-                    System.out.println("==============        ===============");
-                    System.out.println("================    =================");
+
                     System.out.println("=================  ==================");
                     System.out.println("=====================================");
 
@@ -80,5 +70,6 @@ public class Main {
         }
     }
 }
+
 
 

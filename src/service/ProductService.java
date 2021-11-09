@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class ProductService implements GeneralService<Product> {
-        private ArrayList<Product> listProduct;
+    private ArrayList<Product> listProduct;
 
     public ProductService(ArrayList<Product> listProduct) {
         this.listProduct = listProduct;
@@ -38,13 +38,8 @@ public class ProductService implements GeneralService<Product> {
                 System.out.println(listProduct.get(i));
 
             }
-
         }
-        System.out.println("Không có sản phẩm này");
-
     }
-
-
     @Override
     public void addProduct(Product product) {
         listProduct.add(product);
