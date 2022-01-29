@@ -2,7 +2,6 @@ package service;
 
 import model.Product;
 
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -36,10 +35,10 @@ public class ProductService implements GeneralService<Product> {
         for (int i = 0; i < listProduct.size(); i++) {
             if (listProduct.get(i).getName().equals(name)) {
                 System.out.println(listProduct.get(i));
-
             }
         }
     }
+
     @Override
     public void addProduct(Product product) {
         listProduct.add(product);
@@ -50,15 +49,12 @@ public class ProductService implements GeneralService<Product> {
     public void update(Product product, int id) {
         int index = findIndexById(id);
         listProduct.set(index, product);
-
     }
 
     @Override
     public void deleteById(int id) {
         int index = findIndexById(id);
         listProduct.remove(index);
-
-
     }
 
     @Override
@@ -66,7 +62,6 @@ public class ProductService implements GeneralService<Product> {
         for (int i = 0; i < listProduct.size(); i++) {
             System.out.println(listProduct.get(i));
         }
-
     }
 
     @Override
@@ -87,7 +82,6 @@ public class ProductService implements GeneralService<Product> {
     @Override
     public Product create() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Nhập tên: ");
         String name = scanner.nextLine();
         System.out.print("Nhập nơi sản suất: ");

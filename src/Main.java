@@ -23,49 +23,48 @@ public class Main {
             System.out.println("6. Sắp xếp sản phẩm theo tên.");
             System.out.println("7. Thêm 1 sản phẩm.");
             System.out.println("0. Kết thúc chương trình.");
+            try {
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        productService.print();
+                        break;
+                    case 2:
+                        int delete = scanner.nextInt();
+                        productService.deleteById(delete);
+                        productService.print();
+                        break;
+                    case 3:
+                        int find = scanner.nextInt();
+                        productService.findIndexById(find);
+                        System.out.println(productService.findIndexById(find));
+                        break;
+                    case 4:
+                        productService.sortByPriceDown();
+                        productService.print();
+                        break;
+                    case 5:
+                        productService.sortByPriceUp();
+                        productService.print();
+                        break;
+                    case 6:
+                        productService.sortByName();
+                        productService.print();
+                        break;
+                    case 7:
+                        System.out.println(productService.create());
+                        break;
+                    case 0:
+                        System.exit(0);
+                    default:
+                        System.out.println("/************************************/");
+                        System.out.println(choice + " không có trong mục lục mời nhập lại");
 
-            choice = scanner.nextInt();
-            switch (choice) {
-
-                case 1:
-                    productService.print();
-                    break;
-                case 2:
-                    int delete = scanner.nextInt();
-                    productService.deleteById(delete);
-                    productService.print();
-                    break;
-                case 3:
-                    int find = scanner.nextInt();
-                    productService.findIndexById(find);
-                    System.out.println(productService.findIndexById(find));
-                    break;
-
-                case 4:
-                    productService.sortByPriceDown();
-                    productService.print();
-                    break;
-                case 5:
-                    productService.sortByPriceUp();
-                    productService.print();
-                    break;
-                case 6:
-                    productService.sortByName();
-                    productService.print();
-                    break;
-                case 7:
-                    System.out.println(productService.create());
-
-                    break;
-                case 0:
-                    System.exit(0);
-                default:
-                    System.out.println("/************************************/");
-                    System.out.println(choice + " không có trong mục lục mời nhập lại");
-
-                    System.out.println("=================  ==================");
-                    System.out.println("=====================================");
-
+                        System.out.println("=================  ==================");
+                        System.out.println("=====================================");
+                }
+            } catch (Exception e) {
+                System.out.println("Lỗi");
             }
         }
     }

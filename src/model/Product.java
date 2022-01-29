@@ -14,6 +14,11 @@ public class Product {
         this.made = made;
     }
 
+    public Product(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Product() {
     }
 
